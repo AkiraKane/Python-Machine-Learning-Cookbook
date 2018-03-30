@@ -63,7 +63,7 @@ if __name__=='__main__':
     ldamodel = models.ldamodel.LdaModel(corpus, 
             num_topics=num_topics, id2word=dict_tokens, passes=25)
 
-    print "\nMost contributing words to the topics:"
+    print("\nMost contributing words to the topics:")
     for item in ldamodel.print_topics(num_topics=num_topics, num_words=num_words):
-        print "\nTopic", item[0], "==>", item[1]
+        print("\nTopic", item[0], "==>", item[1])
 

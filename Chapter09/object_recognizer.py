@@ -1,5 +1,5 @@
 import argparse 
-import cPickle as pickle 
+import pickle as pickle 
 
 import cv2
 import numpy as np
@@ -41,5 +41,5 @@ if __name__=='__main__':
 
     scaling_size = 200
 
-    print "\nOutput:", ImageTagExtractor(model_file, 
-            codebook_file).predict(input_image, scaling_size)
+    print("\nOutput:", ImageTagExtractor(model_file, 
+            codebook_file).predict(input_image, scaling_size))

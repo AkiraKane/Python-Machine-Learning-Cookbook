@@ -16,7 +16,7 @@ labels = meanshift_estimator.labels_
 centroids = meanshift_estimator.cluster_centers_
 num_clusters = len(np.unique(labels))
 
-print "Number of clusters in input data =", num_clusters
+print("Number of clusters in input data =", num_clusters)
 
 ###########################################################
 # Plot the points and centroids 
@@ -29,7 +29,7 @@ plt.figure()
 # specify marker shapes for different clusters
 markers = '.*xv'
 
-for i, marker in zip(range(num_clusters), markers):
+for i, marker in zip(list(range(num_clusters)), markers):
     # plot the points belong to the current cluster
     plt.scatter(X[labels==i, 0], X[labels==i, 1], marker=marker, color='k')
 

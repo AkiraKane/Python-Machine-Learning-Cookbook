@@ -23,19 +23,19 @@ parameter_grid = [  {'kernel': ['linear'], 'C': [1, 10, 50, 600]},
 metrics = ['precision', 'recall_weighted']
 
 for metric in metrics:
-    print "\n#### Searching optimal hyperparameters for", metric
+    print("\n#### Searching optimal hyperparameters for", metric)
 
     classifier = grid_search.GridSearchCV(svm.SVC(C=1), 
             parameter_grid, cv=5, scoring=metric)
     classifier.fit(X_train, y_train)
 
-    print "\nScores across the parameter grid:"
+    print("\nScores across the parameter grid:")
     for params, avg_score, _ in classifier.grid_scores_:
-        print params, '-->', round(avg_score, 3)
+        print(params, '-->', round(avg_score, 3))
 
-    print "\nHighest scoring parameter set:", classifier.best_params_
+    print("\nHighest scoring parameter set:", classifier.best_params_)
 
     y_true, y_pred = y_test, classifier.predict(X_test)
-    print "\nFull performance report:\n"
-    print classification_report(y_true, y_pred)
+    print("\nFull performance report:\n")
+    print(classification_report(y_true, y_pred))
 

@@ -15,7 +15,7 @@ colors = ['orange', 'lightgreen', 'lightblue', 'gold', 'cyan']
 explode = (0, 0, 0, 0, 0)  
 
 # Plot the pie chart
-plt.pie(data.values(), explode=explode, labels=data.keys(), 
+plt.pie(list(data.values()), explode=explode, labels=list(data.keys()), 
         colors=colors, autopct='%1.1f%%', shadow=False, startangle=90)
 
 # Aspect ratio of the pie chart, 'equal' indicates tht we 

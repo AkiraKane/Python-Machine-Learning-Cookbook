@@ -17,7 +17,7 @@ plt.scatter(class_0[:,0], class_0[:,1], color='black', marker='s')
 plt.scatter(class_1[:,0], class_1[:,1], color='black', marker='x')
 
 # draw the separator line
-line_x = range(10)
+line_x = list(range(10))
 line_y = line_x
 
 # plot labeled data and separator line 

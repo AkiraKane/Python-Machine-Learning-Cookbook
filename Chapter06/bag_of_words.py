@@ -26,14 +26,14 @@ if __name__=='__main__':
     doc_term_matrix = vectorizer.fit_transform([chunk['text'] for chunk in chunks])
 
     vocab = np.array(vectorizer.get_feature_names())
-    print "\nVocabulary:"
-    print vocab
+    print("\nVocabulary:")
+    print(vocab)
 
-    print "\nDocument term matrix:"
+    print("\nDocument term matrix:")
     chunk_names = ['Chunk-0', 'Chunk-1', 'Chunk-2', 'Chunk-3', 'Chunk-4']
     formatted_row = '{:>12}' * (len(chunk_names) + 1)
-    print '\n', formatted_row.format('Word', *chunk_names), '\n'
+    print('\n', formatted_row.format('Word', *chunk_names), '\n')
     for word, item in zip(vocab, doc_term_matrix.T):
         # 'item' is a 'csr_matrix' data structure
         output = [str(x) for x in item.data]
-        print formatted_row.format(word, *output)
+        print(formatted_row.format(word, *output))

@@ -46,5 +46,5 @@ num_labels = labels.max()
 
 # Print the results of clustering
 for i in range(num_labels + 1):
-    print "Cluster", i+1, "-->", ', '.join(names[labels == i])
+    print("Cluster", i+1, "-->", ', '.join(names[labels == i]))
 

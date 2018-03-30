@@ -71,11 +71,11 @@ if __name__=='__main__':
     images, labels, le = get_images_and_labels(path_train)
 
     # Train the face recognizer 
-    print "\nTraining..."
+    print("\nTraining...")
     recognizer.train(images, np.array(labels))
 
     # Test the recognizer on unknown images
-    print '\nPerforming prediction on test images...'
+    print('\nPerforming prediction on test images...')
     stop_flag = False
     for root, dirs, files in os.walk(path_test):
         for filename in (x for x in files if x.endswith('.jpg')):

@@ -76,7 +76,7 @@ if __name__=='__main__':
             # Append the label
             y_words.append(label)
 
-        print 'X.shape =', X.shape
+        print('X.shape =', X.shape)
         # Train and save HMM model
         hmm_trainer = HMMTrainer()
         hmm_trainer.train(X)
@@ -113,6 +113,6 @@ if __name__=='__main__':
                 output_label = label
 
         # Print the output
-        print "\nTrue:", input_file[input_file.find('/')+1:input_file.rfind('/')]
-        print "Predicted:", output_label 
+        print("\nTrue:", input_file[input_file.find('/')+1:input_file.rfind('/')])
+        print("Predicted:", output_label) 
 

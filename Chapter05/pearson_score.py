@@ -52,5 +52,5 @@ if __name__=='__main__':
     user1 = 'John Carson'
     user2 = 'Michelle Peterson'
 
-    print "\nPearson score:"
-    print pearson_score(data, user1, user2) 
+    print("\nPearson score:")
+    print(pearson_score(data, user1, user2)) 

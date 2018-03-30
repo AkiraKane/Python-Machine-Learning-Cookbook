@@ -1,5 +1,5 @@
 import argparse 
-import cPickle as pickle 
+import pickle as pickle 
 
 import numpy as np
 from sklearn.ensemble import ExtraTreesClassifier

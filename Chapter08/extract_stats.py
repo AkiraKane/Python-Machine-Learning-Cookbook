@@ -13,18 +13,18 @@ data2 = convert_data_to_timeseries(input_file, 3)
 dataframe = pd.DataFrame({'first': data1, 'second': data2})
 
 # Print max and min
-print '\nMaximum:\n', dataframe.max()
-print '\nMinimum:\n', dataframe.min()
+print('\nMaximum:\n', dataframe.max())
+print('\nMinimum:\n', dataframe.min())
 
 # Print mean
-print '\nMean:\n', dataframe.mean()
-print '\nMean row-wise:\n', dataframe.mean(1)[:10]
+print('\nMean:\n', dataframe.mean())
+print('\nMean row-wise:\n', dataframe.mean(1)[:10])
 
 # Plot rolling mean
 pd.rolling_mean(dataframe, window=24).plot()
 
 # Print correlation coefficients
-print '\nCorrelation coefficients:\n', dataframe.corr()
+print('\nCorrelation coefficients:\n', dataframe.corr())
 
 # Plot rolling correlation
 plt.figure()

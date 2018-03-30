@@ -44,7 +44,7 @@ def perform_clustering(X, connectivity, title, num_clusters=3, linkage='ward'):
     # specify marker shapes for different clusters
     markers = '.vx'
 
-    for i, marker in zip(range(num_clusters), markers):
+    for i, marker in zip(list(range(num_clusters)), markers):
         # plot the points belong to the current cluster
         plt.scatter(X[labels==i, 0], X[labels==i, 1], s=50, 
                     marker=marker, color='k', facecolors='none')

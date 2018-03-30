@@ -28,7 +28,7 @@ def generate_recommendations(dataset, user):
 
     # Create the normalized list
     movie_ranks = np.array([[total/similarity_sums[item], item] 
-            for item, total in total_scores.items()])
+            for item, total in list(total_scores.items())])
 
     # Sort in decreasing order based on the first column
     movie_ranks = movie_ranks[np.argsort(movie_ranks[:, 0])[::-1]]
@@ -45,13 +45,13 @@ if __name__=='__main__':
         data = json.loads(f.read())
 
     user = 'Michael Henry'
-    print "\nRecommendations for " + user + ":"
+    print("\nRecommendations for " + user + ":")
     movies = generate_recommendations(data, user) 
     for i, movie in enumerate(movies):
-        print str(i+1) + '. ' + movie
+        print(str(i+1) + '. ' + movie)
 
     user = 'John Carson' 
-    print "\nRecommendations for " + user + ":"
+    print("\nRecommendations for " + user + ":")
     movies = generate_recommendations(data, user) 
     for i, movie in enumerate(movies):
-        print str(i+1) + '. ' + movie
+        print(str(i+1) + '. ' + movie)

@@ -32,4 +32,4 @@ if __name__=='__main__':
 
     text_chunks = splitter(data, num_words)
 
-    print "Number of text chunks =", len(text_chunks)
+    print("Number of text chunks =", len(text_chunks))

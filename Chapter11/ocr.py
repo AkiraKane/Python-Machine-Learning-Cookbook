@@ -61,8 +61,8 @@ error = net.train(data[:num_train,:], labels[:num_train,:], epochs=10000,
 
 # Predict the output for test inputs 
 predicted_output = net.sim(data[num_train:, :])
-print "\nTesting on unknown data:"
+print("\nTesting on unknown data:")
 for i in range(num_test):
-    print "\nOriginal:", orig_labels[np.argmax(labels[i])]
-    print "Predicted:", orig_labels[np.argmax(predicted_output[i])]
+    print("\nOriginal:", orig_labels[np.argmax(labels[i])])
+    print("Predicted:", orig_labels[np.argmax(predicted_output[i])])
 

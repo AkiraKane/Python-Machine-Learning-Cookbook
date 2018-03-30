@@ -1,6 +1,6 @@
 import os
 import argparse 
-import cPickle as pickle 
+import pickle as pickle 
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -60,13 +60,13 @@ if __name__=='__main__':
     X_train, X_test = X[folds == 1], X[folds != 1]
     y_train, y_test = y[folds == 1], y[folds != 1]
 
-    print "\nTraining the CRF model..."
+    print("\nTraining the CRF model...")
     crf.train(X_train, y_train)
 
     score = crf.evaluate(X_test, y_test)
-    print "\nAccuracy score =", str(round(score*100, 2)) + '%'
+    print("\nAccuracy score =", str(round(score*100, 2)) + '%')
 
-    print "\nTrue label =", decoder(y_test[0])
+    print("\nTrue label =", decoder(y_test[0]))
     predicted_output = crf.classify([X_test[0]])
-    print "Predicted output =", decoder(predicted_output)
+    print("Predicted output =", decoder(predicted_output))
 

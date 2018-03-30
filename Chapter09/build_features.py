@@ -1,7 +1,7 @@
 import os
 import sys
 import argparse
-import cPickle as pickle
+import pickle as pickle
 import json
 
 import cv2
@@ -62,7 +62,7 @@ class FeatureBuilder(object):
             count += 1
 
             if count == max_samples:
-                print "Built centroids for", item['object_class']
+                print("Built centroids for", item['object_class'])
 
             cur_class = item['object_class']
             img = cv2.imread(item['image_path'])
@@ -120,7 +120,7 @@ def get_feature_map(input_map, kmeans, centroids, scaling_size):
         temp_dict = {}
         temp_dict['object_class'] = item['object_class']
     
-        print "Extracting features for", item['image_path']
+        print("Extracting features for", item['image_path'])
         img = cv2.imread(item['image_path'])
         img = resize_image(img, scaling_size)
 
@@ -162,14 +162,14 @@ if __name__=='__main__':
     training_data = load_training_data(data_folder)
 
     # Build the visual codebook
-    print "====== Building visual codebook ======"
+    print("====== Building visual codebook ======")
     kmeans, centroids = FeatureBuilder().get_codewords(training_data, scaling_size)
     if args.codebook_file:
         with open(args.codebook_file, 'w') as f:
             pickle.dump((kmeans, centroids), f)
     
     # Extract features from input images
-    print "\n====== Building the feature map ======"
+    print("\n====== Building the feature map ======")
     feature_map = get_feature_map(training_data, kmeans, centroids, scaling_size)
     if args.feature_map_file:
         with open(args.feature_map_file, 'w') as f:

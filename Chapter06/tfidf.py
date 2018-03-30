@@ -4,14 +4,14 @@ category_map = {'misc.forsale': 'Sales', 'rec.motorcycles': 'Motorcycles',
         'rec.sport.baseball': 'Baseball', 'sci.crypt': 'Cryptography', 
         'sci.space': 'Space'}
 training_data = fetch_20newsgroups(subset='train', 
-        categories=category_map.keys(), shuffle=True, random_state=7)
+        categories=list(category_map.keys()), shuffle=True, random_state=7)
 
 # Feature extraction
 from sklearn.feature_extraction.text import CountVectorizer
 
 vectorizer = CountVectorizer()
 X_train_termcounts = vectorizer.fit_transform(training_data.data)
-print "\nDimensions of training data:", X_train_termcounts.shape
+print("\nDimensions of training data:", X_train_termcounts.shape)
 
 # Training a classifier
 from sklearn.naive_bayes import MultinomialNB
@@ -37,5 +37,5 @@ predicted_categories = classifier.predict(X_input_tfidf)
 
 # Print the outputs
 for sentence, category in zip(input_data, predicted_categories):
-    print '\nInput:', sentence, '\nPredicted category:', \
-            category_map[training_data.target_names[category]]
+    print('\nInput:', sentence, '\nPredicted category:', \
+            category_map[training_data.target_names[category]])

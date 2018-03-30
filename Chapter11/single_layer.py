@@ -37,6 +37,6 @@ plt.grid()
 
 plt.show()
 
-print single_layer_net.sim([[0.3, 4.5]])
-print single_layer_net.sim([[4.5, 0.5]])
-print single_layer_net.sim([[4.3, 8]])
+print(single_layer_net.sim([[0.3, 4.5]]))
+print(single_layer_net.sim([[4.5, 0.5]]))
+print(single_layer_net.sim([[4.3, 8]]))

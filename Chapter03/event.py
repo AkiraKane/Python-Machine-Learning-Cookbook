@@ -40,7 +40,7 @@ from sklearn import cross_validation
 
 accuracy = cross_validation.cross_val_score(classifier, 
         X, y, scoring='accuracy', cv=3)
-print "Accuracy of the classifier: " + str(round(100*accuracy.mean(), 2)) + "%"
+print("Accuracy of the classifier: " + str(round(100*accuracy.mean(), 2)) + "%")
 
 # Testing encoding on single data instance
 input_data = ['Tuesday', '12:30:00','21','23']
@@ -57,5 +57,5 @@ input_data_encoded = np.array(input_data_encoded)
 
 # Predict and print output for a particular datapoint
 output_class = classifier.predict(input_data_encoded)
-print "Output class:", label_encoder[-1].inverse_transform(output_class)[0]
+print("Output class:", label_encoder[-1].inverse_transform(output_class)[0])
 

@@ -21,9 +21,9 @@ knn = NearestNeighbors(n_neighbors=num_neighbors, algorithm='ball_tree').fit(X)
 distances, indices = knn.kneighbors(input_point)
 
 # Print the 'k' nearest neighbors
-print "\nk nearest neighbors"
+print("\nk nearest neighbors")
 for rank, index in enumerate(indices[0][:num_neighbors]):
-    print str(rank+1) + " -->", X[index]
+    print(str(rank+1) + " -->", X[index])
 
 # Plot the nearest neighbors 
 plt.figure()
